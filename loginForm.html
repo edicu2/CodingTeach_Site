@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- 현재접속한 디바이스에 보여줘라 / 장치의 너비와 일치시켜라 / 초기비율이 1.0이라 일반적 비율로 지정한다 부트스트랩 사용에 있어서 가장 기본적인 설정이다-->
+    <meta name="viewport" content="width=device" , initial-scale="1">
+    <title>Coding</title>
+    <!--부트스트랩에서 제공하는 css파일을 가져온다-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--  외부 css -->
+    <link rel="stylesheet" type="text/css" href="css/codingBooster.css">
+    <!-- 메인페이지 에서 바로 보여줄수있는 스타일들은 내부 스타일로 지정-->
+    <style>
+        .login {
+            background-image: url('images/cccc.jpg');
+            padding: 10%;
+        }
+        
+        h1 {
+            font-weight: 600;
+            margin: 40px;
+        }
+        
+        .inner-form {
+            background: #ffffff;
+            padding: 70px;
+            border-radius: 10px;
+        }
+        
+        label {
+            font-size: 18px;
+        }
+        
+        .form-control {
+            background-color: #f5f5f5;
+            box-shadow: none;
+            color: #565656;
+            font-size: 14px;
+        }
+        
+        .btn-danger {
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .forgot {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 15px;
+        }
+        
+        .nav-tabs {
+            border: none;
+            margin: 0 auto;
+            display: table;
+        }
+        
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:hover,
+        .nav-tabs>li.active>a:focus {
+            border: none;
+            color: #3ec2de;
+            font-size: 16px;
+        }
+        
+        .nav>li>a {
+            font-size: 16px;
+        }
+    </style>
+  </head>
+
+<body>
+    <!--main_menubar start-->
+    <header class="navbar navbar-default navbar-fixed-top">
+        <!-- navbar를 default navbar로 설정하고 상단에 고정시킨다 -->
+        <div class="container" name = "menuVue">
+            <!--뷰포트 전체폭까지 늘어나는 최대폭 container 설정 // 그냥container는 반응형 고정 폭 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <!--반응형웹으로 화면을 줄였을때 메뉴를 안보이게 하면서 버튼으로 보여준다 . 버튼을 눌렸을경우 보여준다--><a class="navbar-brand" href="index.html">COCO</a> </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="actives"><a href="index.html">소개<span class="sr-only"></span></a></li>
+                    <li><a href="teacher.html">강사진</a></li>
+                    <li class="dropdown"> <a href="#" class="=dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">수강과목<span class="caret"></span></a>
+                        <!-- 드롭다운을 사용하기위해 class로 지정하고 사용하기위해 기본적인 토클과 데이터 토글을 지정한다.
+                        role:button이라는것을 나타내고 aria-핸즈팝업은 팝업 컨텍스트 메뉴 또는 하위 수준 메뉴가 있음을 나타낸다-->
+                        <ul class="dropdown-menu">
+                            <!--버튼을 클릭했을때 드롭이 활성화-->
+                            <li><a href="lecture.html?lectureName=javaJAVA">JAVA</a></li>
+                            <li><a href="lecture.html?lectureName=javaScript">javaScript</a></li>
+                            <li><a href="lecture.html?lectureName=python">python</a></li>
+                            <li><a href="lecture.html?lectureName=javaJAVA">C</a></li>
+                            <li><a href="lecture.html?lectureName=javaJAVA">C#</a></li>
+                            <!--링크는 매개변수로 값을 넘겨주기위해 설정을한다-->
+                        </ul>
+                    </li>
+                    <li class="dropdown"> <a href="#" class="=dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LOGIN<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="loginForm.html">로그인</a></li>
+                            <li><a href="registerForm.html">회원가입</a></li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="index.html">커뮤니티<span class="sr-only"></span></a></li>
+                    <li class=""><a href="index.html">내강의실<span class="sr-only"></span></a></li>
+                </ul>
+                <!--네비게이션 오른쪽에 위치-->
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="내용을 입력하세요">
+                        <!--폼컨트롤은 자동으로 전역스타일링을 받는다-->
+                        <button type="submit" class="btn btn-default">search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+    <!--main_menubar end-->
+    <div class="login">
+        <div class="container">
+            <div class="col-lg-6 col-lg-offset-3">
+                <!--col-lg-6을 3컬럼만큼 이동시킵니다-->
+                <h1 class="horizontal" style="color: white; text-align: center">LOGIN</h1>
+                <div class="inner-form">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">STUDENT</a></li>
+                        <li><a href="#tab2" data-toggle="tab">TEACHER</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active in fade" id="tab1">
+                            <div class="panel-group">
+                                <form role="form" action="login_process.php" method="post">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label>ID</label>
+                                            <div class="form-group">
+                                                <input type="text" name="userID" id="userID" class="form-control" placeholder=""> </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label>Password</label>
+                                            <div class="form-group">
+                                                <input type="password" name="userPwd" id="userPwd" class="form-control" placeholder=""> </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <button type="submit" class="btn btn-danger"> <span>LOGIN</span> </button>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="forgot">
+                                                <p><a href="#">Forgot Password ?</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab2">
+                            <div class="panel-group">
+                                <form role="form">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label>ID</label>
+                                            <div class="form-group">
+                                                <input type="text" name="teacherID" id="teacherID" class="form-control" placeholder=""> </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label>Password</label>
+                                            <div class="form-group">
+                                                <input type="password" name="teacherPwd" id="teacherPwd" class="form-control" placeholder=""> </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <button type="submit" class="btn btn-danger"> <span>LOGIN</span> </button>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="forgot">
+                                                <p><a href="#">Forgot Password ?</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer start-->
+    <footer>
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4" style="color: gray; font-size: 10px">
+                    <h4>COCO</h4>
+                    <h5>고객센터 02)6409-0878 &nbsp;&nbsp;&nbsp;FAX 02)6406-1309</h5>
+                    <p><small>사업자등록번호: 214-87-98782&nbsp;|&nbsp;
+                        통신판매업신고번호: 제2010-서울서초1503호&nbsp;|&nbsp;
+                        원격평생교육시설 신고번호: 강남교육지원청 제 원-329호 ㈜에스제이더블유인터내셔널
+                        서울특별시 영등포구 국회대로 74길 12 남중빌딩(여의도동 13-19)
+                        &nbsp;|&nbsp;대표: 양홍걸|개인정보보호책임자: 최광철
+                        고객센터: siwoncs@siwonschool.com&nbsp;|&nbsp;마케팅/제휴문의: marketer@siwonschool.com</small></p>
+                    <h5>Copyright &copy; 2018 </h5>
+                    <h5></h5> </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer end-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

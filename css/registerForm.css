@@ -1,0 +1,12 @@
+.signup {
+    padding: 100px;
+    background-image: url('../images/cccc.jpg');
+}
+
+.signform {
+    background: #ffffff;
+    width: 700px;
+    padding: 80px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
